@@ -1,6 +1,6 @@
 {
-  "name": "@homegear/node-blue-node-apple-tv",
-  "version": "1.0.0",
+  "name": "node-blue-node-apple-tv",
+  "version": "1.0.1",
   "description": "This package provides an Apple TV node for Node-BLUE based on pyatv.",
   "files": [
     "*.py",
@@ -20,5 +20,13 @@
   "bugs": {
     "url": "https://github.com/Homegear/node-blue-node-apple-tv/issues"
   },
-  "homepage": "https://github.com/Homegear/node-blue-node-apple-tv"
+  "homepage": "https://github.com/Homegear/node-blue-node-apple-tv",
+  "node-blue": {
+    "maxThreadCounts": {
+      "apple-tv": 0
+    },
+    "nodes": {
+      "apple-tv": "apple-tv.py"
+    }
+  }
 }

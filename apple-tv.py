@@ -184,8 +184,10 @@ async def appstart(loop, hg):
 		atv.listener = device_listener
 		atv.push_updater.listener = push_listener
 		atv.push_updater.start()
-		await atv.power.turn_off() #Turn off Apple TV after reconnect
+		#await atv.power.turn_off() #Turn off Apple TV after reconnect
 		hg.nodeOutput(0, {"payload": True})
+		if atv.power.power_state == const.PowerState.On:
+			hg.nodeOutput(1, {"payload": True})
 		while hg.connected():
 			await asyncio.sleep(1)
 	finally:
